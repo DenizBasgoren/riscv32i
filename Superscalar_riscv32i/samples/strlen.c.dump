@@ -1,0 +1,93 @@
+
+samples/strlen.c.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .note.gnu.build-id:
+
+00000000 <.note.gnu.build-id>:
+   0:	0004                	.2byte	0x4
+   2:	0000                	.2byte	0x0
+   4:	0014                	.2byte	0x14
+   6:	0000                	.2byte	0x0
+   8:	00000003          	lb	x0,0(x0) # 0 <_start-0x24>
+   c:	00554e47          	.4byte	0x554e47
+  10:	74abc6bb          	.4byte	0x74abc6bb
+  14:	bace                	.2byte	0xbace
+  16:	652a                	.2byte	0x652a
+  18:	1245                	.2byte	0x1245
+  1a:	e95e                	.2byte	0xe95e
+  1c:	3c00                	.2byte	0x3c00
+  1e:	0a28                	.2byte	0xa28
+  20:	ea52                	.2byte	0xea52
+  22:	ea1d                	.2byte	0xea1d
+
+Disassembly of section .text:
+
+00000024 <_start>:
+  24:	fe010113          	addi	x2,x2,-32
+  28:	00812e23          	sw	x8,28(x2)
+  2c:	02010413          	addi	x8,x2,32
+  30:	fe042623          	sw	x0,-20(x8)
+  34:	0100006f          	jal	x0,44 <_start+0x20>
+  38:	fec42783          	lw	x15,-20(x8)
+  3c:	00178793          	addi	x15,x15,1
+  40:	fef42623          	sw	x15,-20(x8)
+  44:	07c00793          	addi	x15,x0,124
+  48:	0007a703          	lw	x14,0(x15)
+  4c:	fec42783          	lw	x15,-20(x8)
+  50:	00f707b3          	add	x15,x14,x15
+  54:	0007c783          	lbu	x15,0(x15)
+  58:	fe0790e3          	bne	x15,x0,38 <_start+0x14>
+  5c:	00100793          	addi	x15,x0,1
+  60:	fec42703          	lw	x14,-20(x8)
+  64:	00e7a023          	sw	x14,0(x15)
+  68:	00100073          	ebreak
+  6c:	00000013          	addi	x0,x0,0
+  70:	01c12403          	lw	x8,28(x2)
+  74:	02010113          	addi	x2,x2,32
+  78:	00008067          	jalr	x0,0(x1)
+
+Disassembly of section .data.rel.local:
+
+0000007c <hw>:
+  7c:	0080                	.2byte	0x80
+  7e:	0000                	.2byte	0x0
+
+Disassembly of section .rodata:
+
+00000080 <.rodata>:
+  80:	6548                	.2byte	0x6548
+  82:	6c6c                	.2byte	0x6c6c
+  84:	6f77206f          	jal	x0,72f7a <hw+0x72efe>
+  88:	6c72                	.2byte	0x6c72
+  8a:	2164                	.2byte	0x2164
+  8c:	00              	Address 0x000000000000008c is out of bounds.
+
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347          	.4byte	0x3a434347
+   4:	2820                	.2byte	0x2820
+   6:	29554e47          	.4byte	0x29554e47
+   a:	3120                	.2byte	0x3120
+   c:	2e32                	.2byte	0x2e32
+   e:	2e32                	.2byte	0x2e32
+  10:	0030                	.2byte	0x30
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1b41                	.2byte	0x1b41
+   2:	0000                	.2byte	0x0
+   4:	7200                	.2byte	0x7200
+   6:	7369                	.2byte	0x7369
+   8:	01007663          	bgeu	x0,x16,14 <_start-0x10>
+   c:	0011                	.2byte	0x11
+   e:	0000                	.2byte	0x0
+  10:	1004                	.2byte	0x1004
+  12:	7205                	.2byte	0x7205
+  14:	3376                	.2byte	0x3376
+  16:	6932                	.2byte	0x6932
+  18:	7032                	.2byte	0x7032
+  1a:	0031                	.2byte	0x31

@@ -1,0 +1,182 @@
+
+samples/prime.c.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .note.gnu.build-id:
+
+00000000 <.note.gnu.build-id>:
+   0:	0004                	.2byte	0x4
+   2:	0000                	.2byte	0x0
+   4:	0014                	.2byte	0x14
+   6:	0000                	.2byte	0x0
+   8:	00000003          	lb	x0,0(x0) # 0 <_start-0x24>
+   c:	00554e47          	.4byte	0x554e47
+  10:	3c42                	.2byte	0x3c42
+  12:	09e5                	.2byte	0x9e5
+  14:	897e                	.2byte	0x897e
+  16:	d09f 13fe f0af      	.byte	0x9f, 0xd0, 0xfe, 0x13, 0xaf, 0xf0
+  1c:	f669                	.2byte	0xf669
+  1e:	a2fe                	.2byte	0xa2fe
+  20:	6d05                	.2byte	0x6d05
+  22:	8788                	.2byte	0x8788
+
+Disassembly of section .text:
+
+00000024 <_start>:
+  24:	ff010113          	addi	x2,x2,-16
+  28:	00112623          	sw	x1,12(x2)
+  2c:	00812423          	sw	x8,8(x2)
+  30:	00912223          	sw	x9,4(x2)
+  34:	01010413          	addi	x8,x2,16
+  38:	00100493          	addi	x9,x0,1
+  3c:	00600513          	addi	x10,x0,6
+  40:	158000ef          	jal	x1,198 <nthPrime>
+  44:	00050793          	addi	x15,x10,0
+  48:	00f4a023          	sw	x15,0(x9)
+  4c:	00100073          	ebreak
+  50:	00000013          	addi	x0,x0,0
+  54:	00c12083          	lw	x1,12(x2)
+  58:	00812403          	lw	x8,8(x2)
+  5c:	00412483          	lw	x9,4(x2)
+  60:	01010113          	addi	x2,x2,16
+  64:	00008067          	jalr	x0,0(x1)
+
+00000068 <mul>:
+  68:	fd010113          	addi	x2,x2,-48
+  6c:	02812623          	sw	x8,44(x2)
+  70:	03010413          	addi	x8,x2,48
+  74:	fca42e23          	sw	x10,-36(x8)
+  78:	fcb42c23          	sw	x11,-40(x8)
+  7c:	fe042623          	sw	x0,-20(x8)
+  80:	fe042423          	sw	x0,-24(x8)
+  84:	0200006f          	jal	x0,a4 <mul+0x3c>
+  88:	fec42703          	lw	x14,-20(x8)
+  8c:	fdc42783          	lw	x15,-36(x8)
+  90:	00f707b3          	add	x15,x14,x15
+  94:	fef42623          	sw	x15,-20(x8)
+  98:	fe842783          	lw	x15,-24(x8)
+  9c:	00178793          	addi	x15,x15,1
+  a0:	fef42423          	sw	x15,-24(x8)
+  a4:	fe842703          	lw	x14,-24(x8)
+  a8:	fd842783          	lw	x15,-40(x8)
+  ac:	fcf74ee3          	blt	x14,x15,88 <mul+0x20>
+  b0:	fec42783          	lw	x15,-20(x8)
+  b4:	00078513          	addi	x10,x15,0
+  b8:	02c12403          	lw	x8,44(x2)
+  bc:	03010113          	addi	x2,x2,48
+  c0:	00008067          	jalr	x0,0(x1)
+
+000000c4 <modulo>:
+  c4:	fe010113          	addi	x2,x2,-32
+  c8:	00812e23          	sw	x8,28(x2)
+  cc:	02010413          	addi	x8,x2,32
+  d0:	fea42623          	sw	x10,-20(x8)
+  d4:	feb42423          	sw	x11,-24(x8)
+  d8:	0140006f          	jal	x0,ec <modulo+0x28>
+  dc:	fec42703          	lw	x14,-20(x8)
+  e0:	fe842783          	lw	x15,-24(x8)
+  e4:	40f707b3          	sub	x15,x14,x15
+  e8:	fef42623          	sw	x15,-20(x8)
+  ec:	fec42703          	lw	x14,-20(x8)
+  f0:	fe842783          	lw	x15,-24(x8)
+  f4:	fef754e3          	bge	x14,x15,dc <modulo+0x18>
+  f8:	fec42783          	lw	x15,-20(x8)
+  fc:	00078513          	addi	x10,x15,0
+ 100:	01c12403          	lw	x8,28(x2)
+ 104:	02010113          	addi	x2,x2,32
+ 108:	00008067          	jalr	x0,0(x1)
+
+0000010c <isPrime>:
+ 10c:	fd010113          	addi	x2,x2,-48
+ 110:	02112623          	sw	x1,44(x2)
+ 114:	02812423          	sw	x8,40(x2)
+ 118:	03010413          	addi	x8,x2,48
+ 11c:	fca42e23          	sw	x10,-36(x8)
+ 120:	fdc42703          	lw	x14,-36(x8)
+ 124:	00100793          	addi	x15,x0,1
+ 128:	00e7c663          	blt	x15,x14,134 <isPrime+0x28>
+ 12c:	00000793          	addi	x15,x0,0
+ 130:	0540006f          	jal	x0,184 <isPrime+0x78>
+ 134:	00200793          	addi	x15,x0,2
+ 138:	fef42623          	sw	x15,-20(x8)
+ 13c:	02c0006f          	jal	x0,168 <isPrime+0x5c>
+ 140:	fec42583          	lw	x11,-20(x8)
+ 144:	fdc42503          	lw	x10,-36(x8)
+ 148:	f7dff0ef          	jal	x1,c4 <modulo>
+ 14c:	00050793          	addi	x15,x10,0
+ 150:	00079663          	bne	x15,x0,15c <isPrime+0x50>
+ 154:	00000793          	addi	x15,x0,0
+ 158:	02c0006f          	jal	x0,184 <isPrime+0x78>
+ 15c:	fec42783          	lw	x15,-20(x8)
+ 160:	00178793          	addi	x15,x15,1
+ 164:	fef42623          	sw	x15,-20(x8)
+ 168:	fec42583          	lw	x11,-20(x8)
+ 16c:	fec42503          	lw	x10,-20(x8)
+ 170:	ef9ff0ef          	jal	x1,68 <mul>
+ 174:	00050713          	addi	x14,x10,0
+ 178:	fdc42783          	lw	x15,-36(x8)
+ 17c:	fce7d2e3          	bge	x15,x14,140 <isPrime+0x34>
+ 180:	00100793          	addi	x15,x0,1
+ 184:	00078513          	addi	x10,x15,0
+ 188:	02c12083          	lw	x1,44(x2)
+ 18c:	02812403          	lw	x8,40(x2)
+ 190:	03010113          	addi	x2,x2,48
+ 194:	00008067          	jalr	x0,0(x1)
+
+00000198 <nthPrime>:
+ 198:	fd010113          	addi	x2,x2,-48
+ 19c:	02112623          	sw	x1,44(x2)
+ 1a0:	02812423          	sw	x8,40(x2)
+ 1a4:	03010413          	addi	x8,x2,48
+ 1a8:	fca42e23          	sw	x10,-36(x8)
+ 1ac:	fe042623          	sw	x0,-20(x8)
+ 1b0:	00100793          	addi	x15,x0,1
+ 1b4:	fef42423          	sw	x15,-24(x8)
+ 1b8:	02c0006f          	jal	x0,1e4 <nthPrime+0x4c>
+ 1bc:	fe842783          	lw	x15,-24(x8)
+ 1c0:	00178793          	addi	x15,x15,1
+ 1c4:	fef42423          	sw	x15,-24(x8)
+ 1c8:	fe842503          	lw	x10,-24(x8)
+ 1cc:	f41ff0ef          	jal	x1,10c <isPrime>
+ 1d0:	00050793          	addi	x15,x10,0
+ 1d4:	00078863          	beq	x15,x0,1e4 <nthPrime+0x4c>
+ 1d8:	fec42783          	lw	x15,-20(x8)
+ 1dc:	00178793          	addi	x15,x15,1
+ 1e0:	fef42623          	sw	x15,-20(x8)
+ 1e4:	fec42703          	lw	x14,-20(x8)
+ 1e8:	fdc42783          	lw	x15,-36(x8)
+ 1ec:	fcf748e3          	blt	x14,x15,1bc <nthPrime+0x24>
+ 1f0:	fe842783          	lw	x15,-24(x8)
+ 1f4:	00078513          	addi	x10,x15,0
+ 1f8:	02c12083          	lw	x1,44(x2)
+ 1fc:	02812403          	lw	x8,40(x2)
+ 200:	03010113          	addi	x2,x2,48
+ 204:	00008067          	jalr	x0,0(x1)
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347          	.4byte	0x3a434347
+   4:	2820                	.2byte	0x2820
+   6:	29554e47          	.4byte	0x29554e47
+   a:	3120                	.2byte	0x3120
+   c:	2e32                	.2byte	0x2e32
+   e:	2e32                	.2byte	0x2e32
+  10:	0030                	.2byte	0x30
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1b41                	.2byte	0x1b41
+   2:	0000                	.2byte	0x0
+   4:	7200                	.2byte	0x7200
+   6:	7369                	.2byte	0x7369
+   8:	01007663          	bgeu	x0,x16,14 <_start-0x10>
+   c:	0011                	.2byte	0x11
+   e:	0000                	.2byte	0x0
+  10:	1004                	.2byte	0x1004
+  12:	7205                	.2byte	0x7205
+  14:	3376                	.2byte	0x3376
+  16:	6932                	.2byte	0x6932
+  18:	7032                	.2byte	0x7032
+  1a:	0031                	.2byte	0x31

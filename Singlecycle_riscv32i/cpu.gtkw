@@ -1,0 +1,63 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Sun Dec 10 12:48:16 2023
+[*]
+[dumpfile] "/home/korsan/ders/riscv/hw2again/riscv_singlecycle.vcd"
+[dumpfile_mtime] "Sun Dec 10 12:46:18 2023"
+[dumpfile_size] 96673
+[savefile] "/home/korsan/ders/riscv/hw2again/sum.gtkw"
+[timestart] 0
+[size] 1362 724
+[pos] -1 -1
+*-0.877123 4 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] RiscvSingleCycle_tb.
+[treeopen] RiscvSingleCycle_tb.cpu.
+[treeopen] RiscvSingleCycle_tb.cpu.regfile.
+[sst_width] 267
+[signals_width] 214
+[sst_expanded] 1
+[sst_vpaned_height] 202
+@420
+RiscvSingleCycle_tb.clk_i
+RiscvSingleCycle_tb.cpu.aluArg1In[31:0]
+RiscvSingleCycle_tb.cpu.aluArg2In[31:0]
+RiscvSingleCycle_tb.cpu.aluOut[31:0]
+RiscvSingleCycle_tb.cpu.datamemOut[31:0]
+@22
+RiscvSingleCycle_tb.cpu.imemOut[31:0]
+@420
+RiscvSingleCycle_tb.cpu.immedGenOut[31:0]
+RiscvSingleCycle_tb.cpu.pc[31:0]
+RiscvSingleCycle_tb.cpu.reg1Out[31:0]
+RiscvSingleCycle_tb.cpu.reg2Out[31:0]
+RiscvSingleCycle_tb.cpu.regWritingIn[31:0]
+@22
+RiscvSingleCycle_tb.cpu.regfile.addressForReading1[4:0]
+RiscvSingleCycle_tb.cpu.regfile.addressForReading2[4:0]
+@28
+[color] 2
+RiscvSingleCycle_tb.cpu.instDecoder.PCSelect
+[color] 2
+RiscvSingleCycle_tb.cpu.instDecoder.aluArg1Select[1:0]
+[color] 2
+RiscvSingleCycle_tb.cpu.instDecoder.aluArg2Select
+@22
+[color] 2
+RiscvSingleCycle_tb.cpu.instDecoder.aluOperation[3:0]
+@28
+[color] 2
+RiscvSingleCycle_tb.cpu.instDecoder.branchType[2:0]
+[color] 2
+RiscvSingleCycle_tb.cpu.instDecoder.datamemWriteEnable
+@22
+[color] 2
+RiscvSingleCycle_tb.cpu.instDecoder.instType[3:0]
+@28
+[color] 2
+RiscvSingleCycle_tb.cpu.instDecoder.regfileWriteEnable
+[color] 2
+RiscvSingleCycle_tb.cpu.instDecoder.willBranch
+[color] 2
+RiscvSingleCycle_tb.cpu.instDecoder.writebackSelect[1:0]
+[pattern_trace] 1
+[pattern_trace] 0

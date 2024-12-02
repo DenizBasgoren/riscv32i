@@ -1,0 +1,128 @@
+
+samples/findmax.c.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .note.gnu.build-id:
+
+00000000 <.note.gnu.build-id>:
+   0:	0004                	.2byte	0x4
+   2:	0000                	.2byte	0x0
+   4:	0014                	.2byte	0x14
+   6:	0000                	.2byte	0x0
+   8:	00000003          	lb	x0,0(x0) # 0 <_start-0x24>
+   c:	00554e47          	.4byte	0x554e47
+  10:	d88d                	.2byte	0xd88d
+  12:	5384                	.2byte	0x5384
+  14:	b49c                	.2byte	0xb49c
+  16:	c195acd7          	.4byte	0xc195acd7
+  1a:	c945                	.2byte	0xc945
+  1c:	5bfc                	.2byte	0x5bfc
+  1e:	c499                	.2byte	0xc499
+  20:	1581                	.2byte	0x1581
+  22:	296d                	.2byte	0x296d
+
+Disassembly of section .text:
+
+00000024 <_start>:
+  24:	fe010113          	addi	x2,x2,-32
+  28:	00812e23          	sw	x8,28(x2)
+  2c:	02010413          	addi	x8,x2,32
+  30:	fe042623          	sw	x0,-20(x8)
+  34:	00100793          	addi	x15,x0,1
+  38:	fef42423          	sw	x15,-24(x8)
+  3c:	0440006f          	jal	x0,80 <_start+0x5c>
+  40:	0d000713          	addi	x14,x0,208
+  44:	fe842783          	lw	x15,-24(x8)
+  48:	00279793          	slli	x15,x15,0x2
+  4c:	00f707b3          	add	x15,x14,x15
+  50:	0007a703          	lw	x14,0(x15)
+  54:	0d000693          	addi	x13,x0,208
+  58:	fec42783          	lw	x15,-20(x8)
+  5c:	00279793          	slli	x15,x15,0x2
+  60:	00f687b3          	add	x15,x13,x15
+  64:	0007a783          	lw	x15,0(x15)
+  68:	00e7d663          	bge	x15,x14,74 <_start+0x50>
+  6c:	fe842783          	lw	x15,-24(x8)
+  70:	fef42623          	sw	x15,-20(x8)
+  74:	fe842783          	lw	x15,-24(x8)
+  78:	00178793          	addi	x15,x15,1
+  7c:	fef42423          	sw	x15,-24(x8)
+  80:	fe842703          	lw	x14,-24(x8)
+  84:	01000793          	addi	x15,x0,16
+  88:	fae7dce3          	bge	x15,x14,40 <_start+0x1c>
+  8c:	00100793          	addi	x15,x0,1
+  90:	fec42703          	lw	x14,-20(x8)
+  94:	0ff77713          	andi	x14,x14,255
+  98:	00e78023          	sb	x14,0(x15)
+  9c:	0d000713          	addi	x14,x0,208
+  a0:	fec42783          	lw	x15,-20(x8)
+  a4:	00279793          	slli	x15,x15,0x2
+  a8:	00f707b3          	add	x15,x14,x15
+  ac:	0007a703          	lw	x14,0(x15)
+  b0:	00200793          	addi	x15,x0,2
+  b4:	0ff77713          	andi	x14,x14,255
+  b8:	00e78023          	sb	x14,0(x15)
+  bc:	00100073          	ebreak
+  c0:	00000013          	addi	x0,x0,0
+  c4:	01c12403          	lw	x8,28(x2)
+  c8:	02010113          	addi	x2,x2,32
+  cc:	00008067          	jalr	x0,0(x1)
+
+Disassembly of section .data:
+
+000000d0 <arr>:
+  d0:	0014                	.2byte	0x14
+  d2:	0000                	.2byte	0x0
+  d4:	0028                	.2byte	0x28
+  d6:	0000                	.2byte	0x0
+  d8:	000a                	.2byte	0xa
+  da:	0000                	.2byte	0x0
+  dc:	00000017          	auipc	x0,0x0
+  e0:	0035                	.2byte	0x35
+  e2:	0000                	.2byte	0x0
+  e4:	0000000b          	.4byte	0xb
+  e8:	0000002b          	.4byte	0x2b
+  ec:	00000017          	auipc	x0,0x0
+  f0:	001c                	.2byte	0x1c
+  f2:	0000                	.2byte	0x0
+  f4:	0035                	.2byte	0x35
+  f6:	0000                	.2byte	0x0
+  f8:	0000001b          	.4byte	0x1b
+  fc:	0000002b          	.4byte	0x2b
+ 100:	000c                	.2byte	0xc
+ 102:	0000                	.2byte	0x0
+ 104:	0000002b          	.4byte	0x2b
+ 108:	0020                	.2byte	0x20
+ 10a:	0000                	.2byte	0x0
+ 10c:	001d                	.2byte	0x1d
+ 10e:	0000                	.2byte	0x0
+ 110:	0014                	.2byte	0x14
+ 112:	0000                	.2byte	0x0
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347          	.4byte	0x3a434347
+   4:	2820                	.2byte	0x2820
+   6:	29554e47          	.4byte	0x29554e47
+   a:	3120                	.2byte	0x3120
+   c:	2e32                	.2byte	0x2e32
+   e:	2e32                	.2byte	0x2e32
+  10:	0030                	.2byte	0x30
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1b41                	.2byte	0x1b41
+   2:	0000                	.2byte	0x0
+   4:	7200                	.2byte	0x7200
+   6:	7369                	.2byte	0x7369
+   8:	01007663          	bgeu	x0,x16,14 <_start-0x10>
+   c:	0011                	.2byte	0x11
+   e:	0000                	.2byte	0x0
+  10:	1004                	.2byte	0x1004
+  12:	7205                	.2byte	0x7205
+  14:	3376                	.2byte	0x3376
+  16:	6932                	.2byte	0x6932
+  18:	7032                	.2byte	0x7032
+  1a:	0031                	.2byte	0x31

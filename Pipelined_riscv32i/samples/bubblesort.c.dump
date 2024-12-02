@@ -1,0 +1,164 @@
+
+samples/bubblesort.c.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .note.gnu.build-id:
+
+00000000 <.note.gnu.build-id>:
+   0:	0004                	.2byte	0x4
+   2:	0000                	.2byte	0x0
+   4:	0014                	.2byte	0x14
+   6:	0000                	.2byte	0x0
+   8:	00000003          	lb	x0,0(x0) # 0 <swap-0x24>
+   c:	00554e47          	.4byte	0x554e47
+  10:	e80d                	.2byte	0xe80d
+  12:	85ae                	.2byte	0x85ae
+  14:	9c78                	.2byte	0x9c78
+  16:	71368e97          	auipc	x29,0x71368
+  1a:	3358                	.2byte	0x3358
+  1c:	a272                	.2byte	0xa272
+  1e:	217c                	.2byte	0x217c
+  20:	4021a4b3          	.4byte	0x4021a4b3
+
+Disassembly of section .text:
+
+00000024 <swap>:
+  24:	fd010113          	addi	x2,x2,-48
+  28:	02812623          	sw	x8,44(x2)
+  2c:	03010413          	addi	x8,x2,48
+  30:	fca42e23          	sw	x10,-36(x8)
+  34:	fcb42c23          	sw	x11,-40(x8)
+  38:	fdc42783          	lw	x15,-36(x8)
+  3c:	0007c783          	lbu	x15,0(x15)
+  40:	fef407a3          	sb	x15,-17(x8)
+  44:	fd842783          	lw	x15,-40(x8)
+  48:	0007c703          	lbu	x14,0(x15)
+  4c:	fdc42783          	lw	x15,-36(x8)
+  50:	00e78023          	sb	x14,0(x15)
+  54:	fd842783          	lw	x15,-40(x8)
+  58:	fef44703          	lbu	x14,-17(x8)
+  5c:	00e78023          	sb	x14,0(x15)
+  60:	00000013          	addi	x0,x0,0
+  64:	02c12403          	lw	x8,44(x2)
+  68:	03010113          	addi	x2,x2,48
+  6c:	00008067          	jalr	x0,0(x1)
+
+00000070 <_start>:
+  70:	fe010113          	addi	x2,x2,-32
+  74:	00112e23          	sw	x1,28(x2)
+  78:	00812c23          	sw	x8,24(x2)
+  7c:	02010413          	addi	x8,x2,32
+  80:	00400793          	addi	x15,x0,4
+  84:	fef42423          	sw	x15,-24(x8)
+  88:	fe842583          	lw	x11,-24(x8)
+  8c:	1b400513          	addi	x10,x0,436
+  90:	054000ef          	jal	x1,e4 <bubbleSort>
+  94:	fe042623          	sw	x0,-20(x8)
+  98:	0280006f          	jal	x0,c0 <_start+0x50>
+  9c:	fec42783          	lw	x15,-20(x8)
+  a0:	1b400693          	addi	x13,x0,436
+  a4:	fec42703          	lw	x14,-20(x8)
+  a8:	00e68733          	add	x14,x13,x14
+  ac:	00074703          	lbu	x14,0(x14)
+  b0:	00e78023          	sb	x14,0(x15)
+  b4:	fec42783          	lw	x15,-20(x8)
+  b8:	00178793          	addi	x15,x15,1
+  bc:	fef42623          	sw	x15,-20(x8)
+  c0:	fec42703          	lw	x14,-20(x8)
+  c4:	fe842783          	lw	x15,-24(x8)
+  c8:	fcf74ae3          	blt	x14,x15,9c <_start+0x2c>
+  cc:	00100073          	ebreak
+  d0:	00000013          	addi	x0,x0,0
+  d4:	01c12083          	lw	x1,28(x2)
+  d8:	01812403          	lw	x8,24(x2)
+  dc:	02010113          	addi	x2,x2,32
+  e0:	00008067          	jalr	x0,0(x1)
+
+000000e4 <bubbleSort>:
+  e4:	fd010113          	addi	x2,x2,-48
+  e8:	02112623          	sw	x1,44(x2)
+  ec:	02812423          	sw	x8,40(x2)
+  f0:	03010413          	addi	x8,x2,48
+  f4:	fca42e23          	sw	x10,-36(x8)
+  f8:	fcb42c23          	sw	x11,-40(x8)
+  fc:	fe042623          	sw	x0,-20(x8)
+ 100:	08c0006f          	jal	x0,18c <bubbleSort+0xa8>
+ 104:	fe042423          	sw	x0,-24(x8)
+ 108:	0600006f          	jal	x0,168 <bubbleSort+0x84>
+ 10c:	fe842783          	lw	x15,-24(x8)
+ 110:	fdc42703          	lw	x14,-36(x8)
+ 114:	00f707b3          	add	x15,x14,x15
+ 118:	0007c703          	lbu	x14,0(x15)
+ 11c:	fe842783          	lw	x15,-24(x8)
+ 120:	00178793          	addi	x15,x15,1
+ 124:	fdc42683          	lw	x13,-36(x8)
+ 128:	00f687b3          	add	x15,x13,x15
+ 12c:	0007c783          	lbu	x15,0(x15)
+ 130:	02e7f663          	bgeu	x15,x14,15c <bubbleSort+0x78>
+ 134:	fe842783          	lw	x15,-24(x8)
+ 138:	fdc42703          	lw	x14,-36(x8)
+ 13c:	00f706b3          	add	x13,x14,x15
+ 140:	fe842783          	lw	x15,-24(x8)
+ 144:	00178793          	addi	x15,x15,1
+ 148:	fdc42703          	lw	x14,-36(x8)
+ 14c:	00f707b3          	add	x15,x14,x15
+ 150:	00078593          	addi	x11,x15,0
+ 154:	00068513          	addi	x10,x13,0
+ 158:	ecdff0ef          	jal	x1,24 <swap>
+ 15c:	fe842783          	lw	x15,-24(x8)
+ 160:	00178793          	addi	x15,x15,1
+ 164:	fef42423          	sw	x15,-24(x8)
+ 168:	fd842703          	lw	x14,-40(x8)
+ 16c:	fec42783          	lw	x15,-20(x8)
+ 170:	40f707b3          	sub	x15,x14,x15
+ 174:	fff78793          	addi	x15,x15,-1
+ 178:	fe842703          	lw	x14,-24(x8)
+ 17c:	f8f748e3          	blt	x14,x15,10c <bubbleSort+0x28>
+ 180:	fec42783          	lw	x15,-20(x8)
+ 184:	00178793          	addi	x15,x15,1
+ 188:	fef42623          	sw	x15,-20(x8)
+ 18c:	fd842783          	lw	x15,-40(x8)
+ 190:	fff78793          	addi	x15,x15,-1
+ 194:	fec42703          	lw	x14,-20(x8)
+ 198:	f6f746e3          	blt	x14,x15,104 <bubbleSort+0x20>
+ 19c:	00000013          	addi	x0,x0,0
+ 1a0:	00000013          	addi	x0,x0,0
+ 1a4:	02c12083          	lw	x1,44(x2)
+ 1a8:	02812403          	lw	x8,40(x2)
+ 1ac:	03010113          	addi	x2,x2,48
+ 1b0:	00008067          	jalr	x0,0(x1)
+
+Disassembly of section .data:
+
+000001b4 <arr>:
+ 1b4:	140a                	.2byte	0x140a
+ 1b6:	03 04             	Address 0x00000000000001b6 is out of bounds.
+
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347          	.4byte	0x3a434347
+   4:	2820                	.2byte	0x2820
+   6:	29554e47          	.4byte	0x29554e47
+   a:	3120                	.2byte	0x3120
+   c:	2e32                	.2byte	0x2e32
+   e:	2e32                	.2byte	0x2e32
+  10:	0030                	.2byte	0x30
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1b41                	.2byte	0x1b41
+   2:	0000                	.2byte	0x0
+   4:	7200                	.2byte	0x7200
+   6:	7369                	.2byte	0x7369
+   8:	01007663          	bgeu	x0,x16,14 <swap-0x10>
+   c:	0011                	.2byte	0x11
+   e:	0000                	.2byte	0x0
+  10:	1004                	.2byte	0x1004
+  12:	7205                	.2byte	0x7205
+  14:	3376                	.2byte	0x3376
+  16:	6932                	.2byte	0x6932
+  18:	7032                	.2byte	0x7032
+  1a:	0031                	.2byte	0x31
